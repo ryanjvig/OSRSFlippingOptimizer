@@ -1,6 +1,6 @@
 # OSRSFlippingOptimizer
 Optimizes real-time market trades in Oldschool RuneScape based on available capital and number of available trade windows. Optimizes based on 1 hour data for consistency, prints latest price and profit data to inform user of current profitability.  
-Uses CBC mixed integer linear programming solver from PuLP library.  
+Uses CBC mixed integer linear programming solver from PuLP library and OSRS Wiki API.
   
 Sample run:  
 Input:  
