@@ -103,11 +103,15 @@ DV_variablesY = LpVariable.matrix('Y', temp_id, cat = 'Binary', lowBound = 0)
 obj_func = lpSum(DV_variablesX * hour_spread)
 model += obj_func   
 
-# SET PARAMETERS HERE
+# parameter input
 # avalcap: amount of gp available
 # maxTrades: number of trade windows available
-avalcap = np.array([26000000])
-maxTrades = np.array([4])
+print("Enter gp available to trade (0-2147483647): ")
+capital = int(input())
+print("Enter number of windows available (0-8): ")
+windows = int(input())
+avalcap = np.array([capital])
+maxTrades = np.array([windows])
 
 # add constraints to model
 model += lpSum((DV_variablesX[i] * hour_low[i]) for i in range(temp_bl.size)) <= avalcap, 'Capital Constraint'
